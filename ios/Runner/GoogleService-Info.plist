@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>137214672740-gg6b0v1vvq88qk737ph3h4888ss99e1n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.137214672740-gg6b0v1vvq88qk737ph3h4888ss99e1n</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>137214672740-bse28qus4ri8rv8b4fkntguj8iargin3.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBT514kNFB6c7R47PueU2WffChRw-mVKDs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>137214672740</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.tastgeneratepdf</string>
+	<key>PROJECT_ID</key>
+	<string>pdf-app-c4e03</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pdf-app-c4e03.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:137214672740:ios:9034a758cad27281fcc471</string>
+</dict>
+</plist>

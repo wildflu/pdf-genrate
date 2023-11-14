@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "137214672740",
+    "project_id": "pdf-app-c4e03",
+    "storage_bucket": "pdf-app-c4e03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137214672740:android:026cc7b6138634a8fcc471",
+        "android_client_info": {
+          "package_name": "com.mycompany.tastgeneratepdf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137214672740-bse28qus4ri8rv8b4fkntguj8iargin3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.tastgeneratepdf",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "137214672740-tuqf247d86n6kjapf50ov0624211qbbk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.tastgeneratepdf",
+            "certificate_hash": "553633564ada7d2d0e932da0122e22738dd3694d"
+          }
+        },
+        {
+          "client_id": "137214672740-uauh0ugoc4lnr8lpvm9nlba9fu7ebiqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbDWOJrYGjHgSLNo72t4Zln_EG2qYFnQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137214672740-uauh0ugoc4lnr8lpvm9nlba9fu7ebiqc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "137214672740-gg6b0v1vvq88qk737ph3h4888ss99e1n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.tastgeneratepdf"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
