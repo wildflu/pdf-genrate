@@ -21,12 +21,15 @@ Future downLoadPdf(String imgUrl) async {
 
     // Check if the request was successful (status code 200)
     if (response.statusCode == 200) {
-      // Get the app's documents directory
-      final Directory appDocDir = await getApplicationDocumentsDirectory();
-      final String appDocPath = appDocDir.path;
+      // Get the external storage directory
+      final Directory extDir = await getExternalStorageDirectory();
+      final String extDirPath = extDir.path;
 
-      // Save the PDF to local storage
-      final File localFile = File('$appDocPath/downloaded_pdf.pdf');
+      // Save the PDF to external storage
+      final File localFile = File('$extDirPath/downloaded_pdf.pdf');
+
+      // Print debug information
+      print('File object created: $localFile');
 
       // Write the bytes to the local file
       await localFile.writeAsBytes(response.bodyBytes);
@@ -39,8 +42,9 @@ Future downLoadPdf(String imgUrl) async {
       print('Failed to download PDF. Status code: ${response.statusCode}');
       return false;
     }
-  } catch (error) {
+  } catch (error, stackTrace) {
     print('Error downloading PDF: $error');
+    print('Stack trace: $stackTrace');
     return false;
   }
 }
