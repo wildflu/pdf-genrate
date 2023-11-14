@@ -22,8 +22,8 @@ Future downLoadPdf(String imgUrl) async {
     // Check if the request was successful (status code 200)
     if (response.statusCode == 200) {
       // Get the external storage directory
-      final Directory extDir = await getExternalStorageDirectory();
-      final String extDirPath = extDir.path;
+      final Directory? extDir = await getExternalStorageDirectory();
+      final String extDirPath = extDir!.path;
 
       // Save the PDF to external storage
       final File localFile = File('$extDirPath/downloaded_pdf.pdf');
