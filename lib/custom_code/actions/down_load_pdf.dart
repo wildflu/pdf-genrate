@@ -15,9 +15,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:dio/dio.dart';
 
 Future downLoadPdf(String imgUrl) async {
-  // Add your function code here!
   try {
-    final Reference ref = FirebaseStorage.instance.ref(imgUrl);
+    // Extract the path from the full PDF URL
+    Uri uri = Uri.parse(imgUrl);
+    String storagePath = uri.path;
 
     // Get the app's documents directory
     final Directory appDocDir = await getApplicationDocumentsDirectory();
@@ -25,6 +26,9 @@ Future downLoadPdf(String imgUrl) async {
 
     // Save the PDF to local storage
     final File localFile = File('$appDocPath/downloaded_pdf.pdf');
+
+    // Use storage path as reference
+    final Reference ref = FirebaseStorage.instance.ref().child(storagePath);
 
     await ref.writeToFile(localFile);
 
