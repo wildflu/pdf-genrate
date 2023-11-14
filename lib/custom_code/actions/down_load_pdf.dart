@@ -16,10 +16,6 @@ import 'package:dio/dio.dart';
 
 Future downLoadPdf(String imgUrl) async {
   // Add your function code here!
-  if (imgUrl == null) {
-    return false;
-  }
-
   try {
     final Reference ref = FirebaseStorage.instance.ref(imgUrl);
 
@@ -33,9 +29,13 @@ Future downLoadPdf(String imgUrl) async {
     await ref.writeToFile(localFile);
 
     print('PDF downloaded to: ${localFile.path}');
+
+    // Return true to indicate successful download
     return true;
   } catch (error) {
     print('Error downloading PDF: $error');
+
+    // Return false to indicate failure
     return false;
   }
 }
