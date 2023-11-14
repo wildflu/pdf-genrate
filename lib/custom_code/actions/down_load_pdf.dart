@@ -16,8 +16,26 @@ import 'package:dio/dio.dart';
 
 Future downLoadPdf(String imgUrl) async {
   // Add your function code here!
-  final tempDi = await getTemporaryDirectory();
+  if (imgUrl == null) {
+    return false;
+  }
 
-  final path = '${tempDi.path}/contract.pdf';
-  await Dio().download(imgUrl, path);
+  try {
+    final Reference ref = FirebaseStorage.instance.ref(imgUrl);
+
+    // Get the app's documents directory
+    final Directory appDocDir = await getApplicationDocumentsDirectory();
+    final String appDocPath = appDocDir.path;
+
+    // Save the PDF to local storage
+    final File localFile = File('$appDocPath/downloaded_pdf.pdf');
+
+    await ref.writeToFile(localFile);
+
+    print('PDF downloaded to: ${localFile.path}');
+    return true;
+  } catch (error) {
+    print('Error downloading PDF: $error');
+    return false;
+  }
 }
