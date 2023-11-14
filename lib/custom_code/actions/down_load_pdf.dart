@@ -12,34 +12,35 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 
 Future downLoadPdf(String imgUrl) async {
   try {
-    // Extract the path from the full PDF URL
-    Uri uri = Uri.parse(imgUrl);
-    String storagePath = uri.path;
+    // Make a GET request to the PDF URL
+    var response = await http.get(Uri.parse(imgUrl));
 
-    // Get the app's documents directory
-    final Directory appDocDir = await getApplicationDocumentsDirectory();
-    final String appDocPath = appDocDir.path;
+    // Check if the request was successful (status code 200)
+    if (response.statusCode == 200) {
+      // Get the app's documents directory
+      final Directory appDocDir = await getApplicationDocumentsDirectory();
+      final String appDocPath = appDocDir.path;
 
-    // Save the PDF to local storage
-    final File localFile = File('$appDocPath/downloaded_pdf.pdf');
+      // Save the PDF to local storage
+      final File localFile = File('$appDocPath/downloaded_pdf.pdf');
 
-    // Use storage path as reference
-    final Reference ref = FirebaseStorage.instance.ref().child(storagePath);
+      // Write the bytes to the local file
+      await localFile.writeAsBytes(response.bodyBytes);
 
-    await ref.writeToFile(localFile);
+      print('PDF downloaded to: ${localFile.path}');
 
-    print('PDF downloaded to: ${localFile.path}');
-
-    // Return true to indicate successful download
-    return true;
+      // Return true to indicate successful download
+      return true;
+    } else {
+      print('Failed to download PDF. Status code: ${response.statusCode}');
+      return false;
+    }
   } catch (error) {
     print('Error downloading PDF: $error');
-
-    // Return false to indicate failure
     return false;
   }
 }
