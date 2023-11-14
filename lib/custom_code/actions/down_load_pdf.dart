@@ -15,9 +15,11 @@ import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
 Future downLoadPdf(String imgUrl) async {
+  const theurl =
+      "https://storage.googleapis.com/gestion-locative-privee.appspot.com/files/contracts/Karl0724.pdf?GoogleAccessId=gestion-locative-privee%40appspot.gserviceaccount.com&Expires=16447017600&Signature=CDuidIqSsSIfDHWI2M8BtT40KHMsvOLzZQ5n1288IuNnmtth3ve%2FslfdcdTRJDMr3jzKZ%2Bg%2Fkf7X7lK%2FeZJpbXN98PIFc3o0nlLxJks62MJd34mDs96AQ4bIGnl9aerZuNUM6DYSpT6Si15BNMUSbgLGIQgyuNzV4lJhjKQBAmMYUA4Ds5dAchqsvoNlEzW8DWVGdk09uWai02d5uaAVx%2BFtYMXwsaMRjJNAkM30LO3sMUvfIKV8mrSv6TS%2FVBjOuIvHeWfP6KVdiFST63WMv3p6F9A8zeuwnez4zINZL9j0JcSQEr4PAhv6REH%2FarNQUad9Rd9R6%2BaS5tC6SyxreQ%3D%3D";
   try {
     // Make a GET request to the PDF URL
-    var response = await http.get(Uri.parse(imgUrl));
+    var response = await http.get(Uri.parse(theurl));
 
     // Check if the request was successful (status code 200)
     if (response.statusCode == 200) {
